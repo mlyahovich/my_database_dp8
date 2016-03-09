@@ -1,0 +1,101 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in sevaral place (links, redirects, local actions etc.)
+entity.my_database_report.canonical:
+  path: '/my_database_report/{my_database_report}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the report entity
+    _entity_view: 'my_database_report'
+    _title: 'Report Content'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'my_database_report.view'
+
+
+entity.my_database_report.collection:
+  path: '/my_database_report/list'
+  defaults:
+  # Calls the list controller, defined in the annotation of the report entity.
+    _entity_list: 'my_database_report'
+    _title: 'Report List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view report entity'
+
+
+my_database.report_add:
+  path: '/my_database_report/add'
+  defaults:
+  # Calls the form.add controller, defined in the report entity.
+    _entity_form: my_database_report.add
+    _title: 'Add report'
+  requirements:
+    _entity_create_access: 'my_database_report'
+
+
+entity.my_database_report.edit_form:
+  path: '/my_database_report/{my_database_report}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the report entity.
+    _entity_form: my_database_report.edit
+    _title: 'Edit report'
+  requirements:
+    _entity_access: 'my_database_report.edit'
+
+
+entity.my_database_report.delete_form:
+  path: '/report/{my_database_report}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the report entity.
+    _entity_form: my_database_report.delete
+    _title: 'Delete report'
+  requirements:
+    _entity_access: 'my_database_report.delete'
+
+
+my_database.report_settings:
+  path: 'admin/structure/my_database_report_settings'
+  defaults:
+    _form: '\Drupal\my_database\Form\reportSettingsForm'
+    _title: 'Report Settings'
+  requirements:
+    _permission: 'administer report entity'
+
+
+my_database.report_delete:
+  path: '/my_database_report/alldelete'
+  defaults:
+  # Calls the form.add controller, defined in the report entity.
+    _form: '\Drupal\my_database\Form\AllDeleteForm'
+    _title: 'Delete all Report?'
+  requirements:
+    _entity_create_access: 'my_database_report'
+
+
+my_database.report_deleteyes:
+  path: '/my_database_report/alldeleteyes'
+  defaults:
+  # Calls the form.add controller, defined in the report entity.
+    _form: '\Drupal\my_database\Form\YesAllDeleteForm'
+    _title: 'Delete all Report?'
+  requirements:
+    _entity_create_access: 'my_database_report'
+
+
+my_database.report_create:
+  path: '/my_database_report/create'
+  defaults:
+  # Calls the form.add controller, defined in the report entity.
+    _form: '\Drupal\my_database\Form\CreateForm'
+    _title: 'Create 1000 Report Entity?'
+  requirements:
+    _entity_create_access: 'my_database_report'
+
+
+my_database.batch:
+  path: '/my_database_report/createyes'
+  defaults:
+    _controller: '\Drupal\my_database\Controller\DiscBatchController::content'
+    _title: 'Disc Batch'
+  requirements:
+    _permission: 'administer content'

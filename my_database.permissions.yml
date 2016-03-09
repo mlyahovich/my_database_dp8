@@ -1,0 +1,10 @@
+'delete report entity':
+  title: Delete entity content.
+'add report entity':
+  title: Add entity content
+'view report entity':
+  title: View entity content
+'edit report entity':
+  title: Edit entity content
+'administer report entity':
+  title: Administer settings

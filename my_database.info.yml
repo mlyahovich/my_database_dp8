@@ -1,0 +1,13 @@
+name: Report Entity Example
+type: module
+description: 'Provides ContentEntityExampleContact entity.'
+package: Example modules
+# core: 8.x
+dependencies:
+  - options
+
+# Information added by Drupal.org packaging script on 2016-02-16
+version: '8.x-1.x-dev'
+core: '8.x'
+project: 'examples'
+configure: entity.my_database_report.collection

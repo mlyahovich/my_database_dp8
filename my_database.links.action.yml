@@ -1,0 +1,31 @@
+# All action links for this module
+
+my_database.report_add:
+  # Which route will be called by the link
+  route_name: my_database.report_add
+  title: 'Add report'
+
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.my_database_report.collection
+    - entity.my_database_report.canonical
+
+
+my_database.report_delete:
+  # Which route will be called by the link
+  route_name: my_database.report_delete
+  title: 'Delete all'
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.my_database_report.collection
+    - entity.my_database_report.canonical
+
+
+my_database.report_create:
+  # Which route will be called by the link
+  route_name: my_database.report_create
+  title: 'Create 1000'
+  # Where will the link appear, defined by route name.
+  appears_on:
+    - entity.my_database_report.collection
+    - entity.my_database_report.canonical

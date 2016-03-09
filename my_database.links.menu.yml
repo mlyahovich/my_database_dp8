@@ -1,0 +1,12 @@
+# Define the menu links for this module
+
+entity.my_database_report.collection:
+  title: 'Report Entity Example: reports Listing'
+  route_name: entity.my_database_report.collection
+  description: 'List reports'
+  weight: 10
+my_database_report.admin.structure.settings:
+  title: report Settings
+  description: 'Configure report entity'
+  route_name:  my_database.report_settings
+  parent: system.admin_structure
